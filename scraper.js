@@ -160,4 +160,8 @@ const scraper = async () => {
     return progresses;
 }
 
+// (async function main() {
+//     const result = await scraper(); //bulkcreate
+// })();
+
 module.exports = scraper;
