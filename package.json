@@ -1,0 +1,23 @@
+{
+  "name": "crm-fcc-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fcc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuyLeifer/crm-fcc-scraper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuyLeifer/crm-fcc-scraper/issues"
+  },
+  "homepage": "https://github.com/GuyLeifer/crm-fcc-scraper#readme",
+  "dependencies": {
+    "axios": "^0.21.0"
+  }
+}
