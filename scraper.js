@@ -2,7 +2,7 @@ const axios = require('axios');
 
 const scraper = async () => {
 
-    const { data } = await axios.get('http://localhost:8080/api/v1/student/all?fields=fcc,id&omitrelations=true&onlyactive=true');
+    const { data } = await axios.get('http://35.226.223.57:8080/api/v1/student/all?fields=fcc,id&omitrelations=true&onlyactive=true');
     const accounts = data;
 
     const usernames =  accounts.map(account => account.fcc_account)
@@ -123,7 +123,7 @@ const scraper = async () => {
                 if (progress.hasOwnProperty("repetition")) {
                     // console.log(progress.userId, new Date(progress.date).toISOString(), progress.relatedId, progress.progress.repetition)
                     try {
-                        await axios.post('http://localhost:8080/api/v1/event', {
+                        await axios.post('http://35.226.223.57:8080/api/v1/event', {
                             userId: progress.userId,
                             relatedId: progress.relatedId,
                             date: new Date(progress.date).toISOString(),
@@ -137,7 +137,7 @@ const scraper = async () => {
                 } else {
                     try {
                         console.log(progress.userId, new Date(progress.date).toISOString(), progress.relatedId)
-                        await axios.post('http://localhost:8080/api/v1/event', {
+                        await axios.post('http://35.226.223.57:8080/api/v1/event', {
                             userId: progress.userId,
                             relatedId: progress.relatedId,
                             date: new Date(progress.date).toISOString(),
@@ -160,8 +160,8 @@ const scraper = async () => {
     return progresses;
 }
 
-// (async function main() {
-//     const result = await scraper(); //bulkcreate
-// })();
+(async function main() {
+    const result = await scraper(); //bulkcreate
+})();
 
 module.exports = scraper;
